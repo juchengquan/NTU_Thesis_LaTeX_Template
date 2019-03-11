@@ -1,0 +1,76 @@
+\documentclass[twoside,a4paper,12pt]{report}
+% hide dvips if use hyperref
+% please add 'draft' option if badbox is being checked
+
+\usepackage{thesis}
+
+%name the thesis title
+\newcommand{\thesisTitle}{Thesis Title}
+\newcommand{\authorName}{Author Name}
+\newcommand{\departmentName}{Department Name}
+\newcommand{\schoolName}{School Name}
+\newcommand{\reportYear}{20XX}
+
+\begin{document}
+\pagenumbering{roman}
+
+\thispagestyle{empty}
+\begin{center}
+	\begin{figure}[!htbp]
+		\centering
+		\vspace{0.25mm}
+		\includegraphics[width=1.05\columnwidth]{fig/ntu_logo.png}
+		\label{fig:NTU_Logo}
+	\end{figure}
+
+	\vspace{2cm}
+	\textbf{\Large \MakeUppercase{\thesisTitle}}
+
+	\vspace{\fill}
+	\textbf{\large{
+			\MakeUppercase{\authorName}\\
+			~\\
+			\MakeUppercase{\departmentName} \\
+			\MakeUppercase{\schoolName} \\
+			~\\
+			\reportYear}}
+\end{center}
+% Add a blank page
+\newpage\null\thispagestyle{empty}\newpage
+~\\
+\makeThesisTitle
+	{\thesisTitle}
+	{\authorName}
+	{\departmentName \\
+	\schoolName \\}
+	{A thesis submitted to Nanyang Technological University\\
+	in partial fulfillment of the requirements for the degree of \\
+	Doctor of Philosophy \\}
+	{\reportYear}
+
+% Add a blank page
+\newpage\null\thispagestyle{empty}\newpage
+
+\include{statement}
+\include{acknowledgement}
+
+\setcounter{page}{1}
+\include{contents} % table of contents
+
+\setcounter{page}{1}
+\include{abstract}
+\include{tables}
+\include{figures}
+\include{abbrev}
+
+% main content
+\pagenumbering{arabic}
+\include{chap1}
+\include{chap2}
+\include{chap3}
+\include{chap_final}
+
+\include{mpubs} %listed publication
+\include{bib}
+
+\end{document}

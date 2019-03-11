@@ -1,0 +1,27 @@
+\clearpage
+
+%reset the pagestyle
+\begingroup
+\fancypagestyle{plain}{%
+	\fancyhf{} % clear all header and footer fields
+	\fancyhead[LE,RO]{Table of Contents}
+	\fancyhead[LO,RE]{}
+	\fancyfoot[C]{\thepage} % except the center
+	\renewcommand{\headrulewidth}{0.4pt}
+}
+\pagestyle{plain}
+
+\phantomsection
+
+\makeatletter
+\renewcommand\contentsname{Table of Contents}
+\makeatother
+
+
+\pdfbookmark[0]{\contentsname}{bookmark_contents}
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+\thispagestyle{tablestyle}
+
+\endgroup

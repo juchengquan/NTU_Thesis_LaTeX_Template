@@ -1,0 +1,216 @@
+%% To use 'times roman' font:
+% For XeLaTeX
+%\usepackage[no-math]{fontspec}
+%\setmainfont{Times New Roman}
+% For pdfLaTeX:
+\usepackage{times}
+
+\usepackage{lipsum} % just dummy text.
+
+%To avoid font size substitution:
+%\usepackage{lmodern}
+%\usepackage{latexsym} % The LaTeX symbol fonts for use with LaTeX2e.
+
+% For figures
+\usepackage[dvips]{graphicx}
+\usepackage[caption=false]{subfig}
+
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+
+
+\usepackage[bookmarksnumbered=true,
+	pdfstartview=Fit,
+	colorlinks=false,
+	pdfpagelayout=SinglePage,
+	hidelinks]{hyperref}
+\usepackage[open,openlevel=1]{bookmark}
+
+
+%% Below command is only for pdfLaTeX:
+%https://tex.stackexchange.com/questions/23235/eliminate-edit-pdf-properties-added-by-pdflatex
+% \pdfsuppressptexinfo=-1 %Suppress PTEX.Fullbanner and info of imported PDFs
+
+%For theothms
+\usepackage{amsthm} % use this before fonts: conflit with 'newtxmath'
+
+%For maths and math fonts
+%\usepackage{amsmath} % must be loaded before newtxmath
+\usepackage{newtxtext} % it will cover font citing before
+\usepackage{newtxmath} % it requires 'amsmath', SO no need to reload. 
+\interdisplaylinepenalty=2500
+
+%reduce hypenation
+\hyphenpenalty=2000
+%\tolerance=1000
+
+%For tables
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{booktabs}
+\renewcommand{\arraystretch}{1}
+
+%For algorithm
+\usepackage{algorithmic}
+
+%spacings
+\newcommand{\spacing}{1.5}
+\renewcommand{\baselinestretch}{\spacing}
+\setlength{\parskip}{6pt}
+
+%define new style for sections
+\usepackage{titlesec} 
+
+%% toc
+\usepackage[subfigure]{tocloft}
+\usepackage{calc}
+\setlength{\cftbeforetoctitleskip}{0pt}
+\setlength{\cftaftertoctitleskip}{20pt}
+\setlength{\cftbeforeloftitleskip}{0pt}
+\setlength{\cftafterloftitleskip}{20pt}
+\setlength{\cftbeforelottitleskip}{0pt}
+\setlength{\cftafterlottitleskip}{20pt}
+
+\setlength{\cftbeforechapskip}{5pt}
+\setlength{\cftbeforefigskip}{0pt}
+\setlength{\cftbeforetabskip}{0pt}
+
+\renewcommand{\cfttoctitlefont}{\normalfont\Large\bfseries}
+\renewcommand{\cftloftitlefont}{\normalfont\Large\bfseries}
+\renewcommand{\cftlottitlefont}{\normalfont\Large\bfseries}
+\setlength{\cftfigindent}{0pt}
+\setlength{\cfttabindent}{0pt}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+
+%https://tex.stackexchange.com/questions/123519/aligning-long-table-captions-in-the-list-of-tables-using-tocloft
+\renewcommand{\cftchappresnum}{Chapter~}
+\renewcommand\cftfigpresnum{Figure~}
+\renewcommand\cftfigaftersnum{~}
+\renewcommand\cfttabpresnum{Table~}
+\renewcommand\cfttabaftersnum{~}
+\AtBeginDocument{%
+	\addtolength\cftchapnumwidth{\widthof{\cftchappresnum}}
+	\addtolength\cftfignumwidth{\widthof{\cftfigpresnum\cftfigaftersnum}}
+	\addtolength\cfttabnumwidth{\widthof{\cfttabpresnum\cfttabaftersnum}}
+}
+
+
+%define the title
+\newcommand{\makeThesisTitle}[5]{%
+	\thispagestyle{empty}
+	\begin{center}
+		\textbf{\MakeUppercase{\Large #1}} \\
+		\vspace{\fill}
+		\MakeUppercase{\Large{#2}} \\
+		\vspace{\fill}
+		\Large{#3}
+		~\\
+		\large{#4}
+		~\\
+		\Large{\textbf{#5}}
+	\end{center}
+}
+
+
+\oddsidemargin = 1cm
+\evensidemargin = 1cm
+\textwidth = 13.6cm
+%\textheight = 19.76cm
+
+\headheight = 15pt
+\headsep = 20pt
+\topmargin = 0cm
+
+\footskip = 1.90cm
+%% For floats
+%\floatsep = 0.21in
+\textfloatsep = \floatsep
+\intextsep = \floatsep
+
+%For citations
+\usepackage{cite}
+
+%For bibliography
+\bibliographystyle{IEEEtran}
+
+
+\setcounter{secnumdepth}{6}
+\setcounter{tocdepth}{3}
+
+%spacing problem
+\titleformat{\chapter}[display]
+{\bfseries\Large}
+{\chaptertitlename~\thechapter}
+{1.2em}{}[]
+\titleformat{\section}[hang]
+{\bfseries\large}
+{\thesection}
+{1.5em}{}[]
+\titlespacing{\chapter}{0pt}{0pt-\headsep}{30pt}
+
+%% Define the heading and footing styles
+\fancypagestyle{plain}{%
+	\fancyhf{} % clear all header and footer fields
+	\fancyhead[LO,RE]{\leftmark}
+	\fancyhead[LE,RO]{ %
+		\ifnum\value{chapter}>0
+			{\chaptername~\thechapter}
+		\else
+			{}
+		\fi
+	}
+	\fancyfoot[C]{\thepage} % except the center
+	\renewcommand{\headrulewidth}{0.4pt}
+	}
+
+\fancypagestyle{tablestyle}{%
+	\fancyhf{} % clear all header and footer fields
+	\fancyhead[LE,RO]{\nouppercase\leftmark}
+	\fancyhead[LO,RE]{}
+	\fancyfoot[C]{\thepage} % except the center
+	\renewcommand{\headrulewidth}{0.4pt}
+}
+
+
+\pagestyle{plain}
+% redefine the header of chapters
+\renewcommand{\chaptermark}[1]{
+	\ifnum\value{chapter}>0
+		\markboth{#1}{}
+	\else
+		\markboth{}{}
+	\fi
+	
+}
+
+% For theorems and corollaries.
+\newtheorem{cor}{Corollary}
+\newtheorem{thm}{Theorem}
+
+% For bibliography
+\newlength{\bibitemsep}\setlength{\bibitemsep}{.2\baselineskip plus .05\baselineskip minus .05\baselineskip}
+\newlength{\bibparskip}\setlength{\bibparskip}{0pt}
+\let\oldthebibliography\thebibliography
+\renewcommand\thebibliography[1]{%
+	\linespread{1.25}\selectfont
+	\oldthebibliography{#1}%
+	\setlength{\parskip}{\bibitemsep}%
+	\setlength{\itemsep}{\bibparskip}%
+}
+\setlength{\bibitemsep}{.2\baselineskip plus .05\baselineskip minus .05\baselineskip}
+
+% force to add to double page
+\newcommand*\forcedoublepage{%
+	\ifodd\value{page}
+		\newpage\null\thispagestyle{empty}\newpage
+	\else
+		{}
+	\fi
+}
+
+%% pasted from IEEEtrans.cls
+% Modify Latex2e \@citex to separate citations with "], ["
+\renewcommand{\citepunct}{], [}
+\renewcommand{\citedash}{]--[}
+
+%% End

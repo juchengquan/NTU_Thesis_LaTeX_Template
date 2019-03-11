@@ -1,0 +1,32 @@
+% switch pagestyle
+\begingroup
+	\fancypagestyle{plain}{%
+		\fancyhf{} % clear all header and footer fields
+		\fancyhead[LE,RO]{Acknowledgment}
+		\fancyhead[LO,RE]{}
+		\fancyfoot[C]{} % except the center, remove the pages 
+		\renewcommand{\headrulewidth}{0.4pt}
+	}
+	\pagestyle{plain}
+	
+	\pdfbookmark[0]{Acknowledgment}{bookmark_ack}
+	
+	\begin{center}
+		\Large{\textbf{Acknowledgment}}
+	\end{center}
+
+\noindent In this part, you shall write a moving story about yourself. 
+
+\lipsum[1]
+
+	\forcedoublepage
+\endgroup
+
+\pagestyle{plain}
+
+% switch back pagestyle
+
+
+
+
+

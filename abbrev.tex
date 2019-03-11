@@ -1,0 +1,26 @@
+\begingroup
+\fancypagestyle{plain}{%
+	\fancyhf{} % clear all header and footer fields
+	\fancyhead[LE,RO]{List of Abbreviations}
+	\fancyhead[LO,RE]{}
+	\fancyfoot[C]{\thepage} % except the center
+	\renewcommand{\headrulewidth}{0.4pt}
+}
+\pagestyle{plain}
+
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Abbreviations}
+
+\vspace*{-6pt}
+\noindent\textbf{\Large List of Abbreviations}
+\vspace*{20pt}
+
+{\setlength{\parindent}{0pt}
+\begin{tabular}{p{50pt}l}
+	%Abbreviation & Abbreviation \\
+	ABBR & Abbreviation \\
+	Bla  & Blah 
+\end{tabular}
+}
+\forcedoublepage
+\endgroup

@@ -1,0 +1,23 @@
+\begingroup
+	\fancypagestyle{plain}{%
+	\fancyhf{} % clear all header and footer fields
+	\fancyhead[LE,RO]{Abstract}
+	\fancyhead[LO,RE]{}
+	\fancyfoot[C]{\thepage} % except the center
+	\renewcommand{\headrulewidth}{0.4pt}
+	}
+	\pagestyle{plain}
+	
+	\phantomsection
+	\addcontentsline{toc}{chapter}{Abstract}
+	
+	\vspace*{\headsep}
+	\noindent\textbf{\Large Abstract}
+	\vspace*{20pt}
+
+%Here goes your abstract.
+\noindent
+\lipsum[1-2]
+
+	\forcedoublepage
+\endgroup
