@@ -3,7 +3,7 @@ LaTeX template for the final thesis of [Nanyang Technological University](https:
 
 **UPDATED on 2019/06/19**:
 - Inconsistency on headers has been modified;
-- Format has been modified following the guideline below. **However**, you may still need check my yourself upon usage. 
+- Format has been modified following the guideline below. **However**, you may still need to check by yourself upon usage. 
 
 **Please read this carefully**:
 - The format is compatible with the requirement of School of EEE and IGS as of 2018. 
