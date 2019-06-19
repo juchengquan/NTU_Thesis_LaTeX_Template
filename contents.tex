@@ -2,14 +2,14 @@
 
 %reset the pagestyle
 \begingroup
-\fancypagestyle{plain}{%
+\fancypagestyle{contents}{%
 	\fancyhf{} % clear all header and footer fields
 	\fancyhead[LE,RO]{Table of Contents}
 	\fancyhead[LO,RE]{}
 	\fancyfoot[C]{\thepage} % except the center
 	\renewcommand{\headrulewidth}{0.4pt}
 }
-\pagestyle{plain}
+\pagestyle{contents}
 
 \phantomsection
 
@@ -24,4 +24,5 @@
 
 \thispagestyle{tablestyle}
 
+\cleardoublepage
 \endgroup

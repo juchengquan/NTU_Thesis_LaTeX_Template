@@ -111,7 +111,6 @@
 	\end{center}
 }
 
-
 \oddsidemargin = 1cm
 \evensidemargin = 1cm
 \textwidth = 13.6cm
@@ -133,7 +132,6 @@
 %For bibliography
 \bibliographystyle{IEEEtran}
 
-
 \setcounter{secnumdepth}{6}
 \setcounter{tocdepth}{3}
 
@@ -149,7 +147,7 @@
 \titlespacing{\chapter}{0pt}{0pt-\headsep}{30pt}
 
 %% Define the heading and footing styles
-\fancypagestyle{plain}{%
+\fancypagestyle{plaincnt}{%
 	\fancyhf{} % clear all header and footer fields
 	\fancyhead[LO,RE]{\leftmark}
 	\fancyhead[LE,RO]{ %
@@ -172,17 +170,6 @@
 }
 
 
-\pagestyle{plain}
-% redefine the header of chapters
-\renewcommand{\chaptermark}[1]{
-	\ifnum\value{chapter}>0
-		\markboth{#1}{}
-	\else
-		\markboth{}{}
-	\fi
-	
-}
-
 % For theorems and corollaries.
 \newtheorem{cor}{Corollary}
 \newtheorem{thm}{Theorem}
@@ -190,6 +177,8 @@
 % For bibliography
 \newlength{\bibitemsep}\setlength{\bibitemsep}{.2\baselineskip plus .05\baselineskip minus .05\baselineskip}
 \newlength{\bibparskip}\setlength{\bibparskip}{0pt}
+
+\let\ps@plain=\ps@fancy
 \let\oldthebibliography\thebibliography
 \renewcommand\thebibliography[1]{%
 	\linespread{1.25}\selectfont
@@ -212,5 +201,14 @@
 % Modify Latex2e \@citex to separate citations with "], ["
 \renewcommand{\citepunct}{], [}
 \renewcommand{\citedash}{]--[}
+
+
+%https://tex.stackexchange.com/questions/1681/how-to-remove-headers-and-footers-for-pages-between-chapters
+\renewcommand*{\cleardoublepage}{\clearpage\if@twoside \ifodd\c@page\else
+	\hbox{}%
+	\thispagestyle{empty}%
+	\newpage%
+	\if@twocolumn\hbox{}\newpage\fi\fi\fi}
+
 
 %% End

@@ -1,19 +1,19 @@
 % switch pagestyle
-\begingroup
-	\fancypagestyle{plain}{%
-		\fancyhf{} % clear all header and footer fields
-		\fancyhead[LE,RO]{Bibliography}
-		\fancyhead[LO,RE]{}
-		\fancyfoot[C]{\thepage} % except the center
-	\renewcommand{\headrulewidth}{0.4pt}
-	}
-	\pagestyle{plain}
-	
-%	\bibliographystyle{IEEEtran}
-	\bibliography{IEEEabrv,shotenedConfName,myRef}
-	\forcedoublepage
-\endgroup
+\fancypagestyle{bibstyle}{%
+	\fancyhf{} % clear all header and footer fields
+	\fancyhead[LE,RO]{Bibliography}
+	\fancyhead[LO,RE]{}
+	\fancyfoot[C]{\thepage} % except the center
+\renewcommand{\headrulewidth}{0.4pt}
+}
+\pagestyle{bibstyle}
+\renewcommand{\chaptermark}[1]{\markboth{}{}}
 
-\pagestyle{plain}
+%\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,shotenedConfName,myRef}
 
-% switch back pagestyle
+\renewcommand{\chaptermark}[1]{\markboth{}{}}
+\pagestyle{bibstyle}
+\lipsum[1-5]
+
+\forcedoublepage

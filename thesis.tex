@@ -51,7 +51,9 @@
 % Add a blank page
 \newpage\null\thispagestyle{empty}\newpage
 
-\include{statement}
+\include{statement_origin}
+\include{statement_sup}
+\include{statement_auth}
 \include{acknowledgement}
 
 \setcounter{page}{1}
@@ -64,12 +66,17 @@
 \include{abbrev}
 
 % main content
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\pagestyle{plaincnt}
+
 \pagenumbering{arabic}
 \include{chap1}
 \include{chap2}
 \include{chap3}
 \include{chap_final}
 
+
+\include{appendixA}
 \include{mpubs} %listed publication
 \include{bib}
 

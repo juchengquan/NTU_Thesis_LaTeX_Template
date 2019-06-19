@@ -1,13 +1,12 @@
-% switch pagestyle
 \begingroup
-	\fancypagestyle{plain}{%
+	\fancypagestyle{ack}{%
 		\fancyhf{} % clear all header and footer fields
 		\fancyhead[LE,RO]{Acknowledgment}
 		\fancyhead[LO,RE]{}
 		\fancyfoot[C]{} % except the center, remove the pages 
 		\renewcommand{\headrulewidth}{0.4pt}
 	}
-	\pagestyle{plain}
+	\pagestyle{ack}
 	
 	\pdfbookmark[0]{Acknowledgment}{bookmark_ack}
 	
@@ -19,12 +18,9 @@
 
 \lipsum[1]
 
-	\forcedoublepage
+\cleardoublepage
 \endgroup
 
-\pagestyle{plain}
-
-% switch back pagestyle
 
 
 

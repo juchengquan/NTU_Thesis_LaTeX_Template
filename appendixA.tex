@@ -1,0 +1,26 @@
+\label{appendixA}
+\fancypagestyle{apdxA}{%
+	\fancyhf{} % clear all header and footer fields
+	\fancyhead[LE,RO]{Appendix A}
+	\fancyhead[LO,RE]{}
+	\fancyfoot[C]{\thepage} % except the center
+	\renewcommand{\headrulewidth}{0.4pt}
+}
+\pagestyle{apdxA}
+
+\phantomsection
+\addcontentsline{toc}{chapter}{Appendix A}
+
+\setcounter{equation}{0}
+\renewcommand{\theequation}{A\arabic{equation}}
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{A\arabic{figure}}
+
+%	\vspace*{\headsep}
+\noindent\textbf{\Large{Appendix A}}
+\vspace*{20pt}
+
+\lipsum[1-5]
+
+%end of chapter
+\forcedoublepage
