@@ -1,11 +1,15 @@
 %% To use 'times roman' font:
+
 % For XeLaTeX
 %\usepackage[no-math]{fontspec}
 %\setmainfont{Times New Roman}
 % For pdfLaTeX:
 \usepackage{times}
+%% Below command is only for pdfLaTeX:
+% https://tex.stackexchange.com/questions/23235/eliminate-edit-pdf-properties-added-by-pdflatex
+% \pdfsuppressptexinfo=-1 %Suppress PTEX.Fullbanner and info of imported PDFs
 
-\usepackage{lipsum} % just dummy text.
+\usepackage{lipsum} % just for dummy text.
 
 %To avoid font size substitution:
 %\usepackage{lmodern}
@@ -18,18 +22,12 @@
 \usepackage{fancyhdr}
 \usepackage{xcolor}
 
-
 \usepackage[bookmarksnumbered=true,
 	pdfstartview=Fit,
 	colorlinks=false,
 	pdfpagelayout=SinglePage,
 	hidelinks]{hyperref}
 \usepackage[open,openlevel=1]{bookmark}
-
-
-%% Below command is only for pdfLaTeX:
-%https://tex.stackexchange.com/questions/23235/eliminate-edit-pdf-properties-added-by-pdflatex
-% \pdfsuppressptexinfo=-1 %Suppress PTEX.Fullbanner and info of imported PDFs
 
 %For theothms
 \usepackage{amsthm} % use this before fonts: conflit with 'newtxmath'
@@ -93,7 +91,6 @@
 	\addtolength\cftfignumwidth{\widthof{\cftfigpresnum\cftfigaftersnum}}
 	\addtolength\cfttabnumwidth{\widthof{\cfttabpresnum\cfttabaftersnum}}
 }
-
 
 %define the title
 \newcommand{\makeThesisTitle}[5]{%
@@ -202,13 +199,11 @@
 \renewcommand{\citepunct}{], [}
 \renewcommand{\citedash}{]--[}
 
-
 %https://tex.stackexchange.com/questions/1681/how-to-remove-headers-and-footers-for-pages-between-chapters
 \renewcommand*{\cleardoublepage}{\clearpage\if@twoside \ifodd\c@page\else
 	\hbox{}%
 	\thispagestyle{empty}%
 	\newpage%
 	\if@twocolumn\hbox{}\newpage\fi\fi\fi}
-
 
 %% End
